@@ -1,0 +1,271 @@
+:root {
+    --bg-color: #0d1117;
+    --card-bg: #161b22;
+    --border-color: #30363d;
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+    --primary-color: #1f6feb;
+    --primary-hover: #388bfd;
+    --secondary-color: #21262d;
+    --secondary-hover: #30363d;
+    --danger-color: #f85149;
+    --error-bg: rgba(248, 81, 73, 0.1);
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Telas */
+.screen {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.screen.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tela de Login */
+#login-screen {
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.login-card h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 8px;
+    background: linear-gradient(to right, #79c0ff, #d2a8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    font-size: 14px;
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group.horizontal {
+    flex-direction: row;
+    gap: 12px;
+}
+
+.input-group.horizontal input {
+    flex: 1;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+input {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.3);
+}
+
+/* Botões */
+button {
+    cursor: pointer;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+}
+
+.primary-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.secondary-btn:hover {
+    background-color: var(--secondary-hover);
+}
+
+.danger-btn {
+    background-color: transparent;
+    color: var(--danger-color);
+    padding: 8px 12px;
+    border: 1px solid transparent;
+}
+
+.danger-btn:hover {
+    background-color: var(--error-bg);
+    border-color: var(--danger-color);
+}
+
+.edit-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 8px 12px;
+    border: 1px solid transparent;
+}
+
+.edit-btn:hover {
+    background-color: rgba(31, 111, 235, 0.1);
+    border-color: var(--primary-color);
+}
+
+/* Mensagem de Erro */
+.error-message {
+    color: var(--danger-color);
+    background-color: var(--error-bg);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(248, 81, 73, 0.4);
+    display: flex;
+    align-items: center;
+}
+
+/* Tela da Lista */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+    font-size: 22px;
+    background: linear-gradient(to right, #79c0ff, #d2a8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header button {
+    width: auto;
+    padding: 8px 16px;
+}
+
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+.add-market-section {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.add-market-section h2, .markets-list-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.markets-list-section {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#markets-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.market-item {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.market-item:hover {
+    border-color: #8b949e;
+    transform: translateY(-2px);
+}
+
+.market-text {
+    font-size: 16px;
+    font-weight: 500;
+    flex: 1;
+    margin-right: 20px;
+    line-height: 1.4;
+}
+
+.market-actions {
+    display: flex;
+    gap: 12px;
+}

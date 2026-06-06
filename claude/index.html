@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PrevisãoMarket — Mercados de Previsão</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ============ TELA DE LOGIN ============ -->
+  <section id="tela-login" class="tela tela-login">
+    <div class="login-card">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <h1 class="brand-name">Previsão<span>Market</span></h1>
+      </div>
+      <p class="login-subtitle">Entre para negociar nos mercados de previsão</p>
+
+      <form id="form-login" autocomplete="off">
+        <label class="campo">
+          <span class="campo-label">Usuário</span>
+          <input type="text" id="input-usuario" placeholder="aluno" />
+        </label>
+
+        <label class="campo">
+          <span class="campo-label">Senha</span>
+          <input type="password" id="input-senha" placeholder="••••••••" />
+        </label>
+
+        <p id="erro-login" class="mensagem-erro" role="alert"></p>
+
+        <button type="submit" class="btn btn-primario btn-bloco">Entrar</button>
+      </form>
+
+      <p class="login-dica">Dica: usuário <strong>aluno</strong> · senha <strong>fiap2025</strong></p>
+    </div>
+  </section>
+
+  <!-- ============ TELA DA LISTA ============ -->
+  <section id="tela-lista" class="tela tela-lista oculto">
+    <header class="topo">
+      <div class="brand brand-topo">
+        <span class="brand-dot"></span>
+        <h1 class="brand-name">Previsão<span>Market</span></h1>
+      </div>
+      <button type="button" id="btn-sair" class="btn btn-secundario">Sair</button>
+    </header>
+
+    <main class="conteudo">
+      <div class="painel-adicionar">
+        <input type="text" id="input-novo" class="input-novo" placeholder="Ex: Bitcoin vai superar $150k em 2026?" />
+        <div class="acoes-adicionar">
+          <button type="button" id="btn-add-inicio" class="btn btn-secundario">↑ Adicionar no início</button>
+          <button type="button" id="btn-add-fim" class="btn btn-primario">Adicionar no final ↓</button>
+        </div>
+      </div>
+
+      <p id="erro-lista" class="mensagem-erro" role="alert"></p>
+
+      <h2 class="titulo-secao">Mercados abertos</h2>
+      <ul id="lista-mercados" class="lista-mercados"></ul>
+    </main>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

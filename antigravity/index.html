@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrediMarket - Mercados de Previsão</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Tela de Login -->
+        <div id="login-screen" class="screen active">
+            <div class="login-card">
+                <h1>PrediMarket</h1>
+                <p class="subtitle">Bem-vindo aos mercados de previsão</p>
+                
+                <div class="input-group">
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" placeholder="Digite seu usuário">
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" placeholder="Digite sua senha">
+                </div>
+                
+                <div id="login-error" class="error-message hidden"></div>
+                
+                <button onclick="handleLogin()" class="primary-btn">Entrar</button>
+            </div>
+        </div>
+
+        <!-- Tela da Lista -->
+        <div id="list-screen" class="screen hidden">
+            <header>
+                <h1>PrediMarket</h1>
+                <button onclick="handleLogout()" class="secondary-btn">Sair</button>
+            </header>
+            
+            <main class="content">
+                <div class="add-market-section">
+                    <h2>Adicionar novo mercado</h2>
+                    <div class="input-group horizontal">
+                        <input type="text" id="new-market-input" placeholder="Ex: Ethereum vai chegar a $10k em 2026?">
+                        <button onclick="handleAddStart()" class="secondary-btn">Add Início</button>
+                        <button onclick="handleAddEnd()" class="primary-btn">Add Final</button>
+                    </div>
+                    <div id="add-error" class="error-message hidden"></div>
+                </div>
+
+                <div class="markets-list-section">
+                    <h2>Mercados em Destaque</h2>
+                    <ul id="markets-list"></ul>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

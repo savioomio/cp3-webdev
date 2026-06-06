@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercados de Previsao</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section id="loginScreen" class="login-screen">
+      <div class="brand-panel">
+        <p class="eyebrow">Prediction markets</p>
+        <h1>Mercados de previsao</h1>
+        <p class="brand-copy">Acompanhe perguntas, organize palpites e mantenha sua lista de mercados sempre atualizada.</p>
+      </div>
+
+      <form id="loginForm" class="login-card" onsubmit="processarLogin(event)" novalidate>
+        <div class="form-header">
+          <p class="eyebrow">Acesso</p>
+          <h2>Entrar</h2>
+        </div>
+
+        <label for="userInput">Usuario</label>
+        <input id="userInput" type="text" autocomplete="username" placeholder="Digite seu usuario">
+
+        <label for="passwordInput">Senha</label>
+        <input id="passwordInput" type="password" autocomplete="current-password" placeholder="Digite sua senha">
+
+        <p id="loginMessage" class="message error-message" aria-live="polite"></p>
+        <button type="submit" class="primary-button">Acessar lista</button>
+      </form>
+    </section>
+
+    <section id="marketScreen" class="market-screen hidden" aria-labelledby="marketTitle">
+      <header class="market-header">
+        <div>
+          <p class="eyebrow">Polymarket style</p>
+          <h1 id="marketTitle">Lista de mercados</h1>
+        </div>
+        <span id="marketCount" class="market-count"></span>
+      </header>
+
+      <section class="market-controls" aria-label="Controles da lista">
+        <label for="marketInput">Nova pergunta de previsao</label>
+        <div class="input-row">
+          <input id="marketInput" type="text" placeholder="Ex: Ethereum vai superar $10k em 2026?">
+          <button id="addEndButton" type="button" class="primary-button" onclick="adicionarAoFinal()">Adicionar ao final</button>
+          <button id="addStartButton" type="button" class="secondary-button" onclick="adicionarAoInicio()">Adicionar ao inicio</button>
+        </div>
+        <p id="marketMessage" class="message error-message" aria-live="polite"></p>
+      </section>
+
+      <ul id="marketList" class="market-list"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
